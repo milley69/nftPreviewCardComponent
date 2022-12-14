@@ -12,6 +12,10 @@ body {
   height: 100vh; }
 
 section {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,6 +86,10 @@ section {
     color: #8bacda;
     margin-top: 17px; }
   .nft-info .cost-time {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
@@ -109,8 +117,12 @@ section {
   .nft-info hr {
     border: 1px solid #2f415b; }
   .nft-info .nft-author {
-    margin-top: 17px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+    margin-top: 17px;
     align-items: center; }
     .nft-info .nft-author img {
       width: 30px;
