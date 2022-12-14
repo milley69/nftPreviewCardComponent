@@ -1,0 +1,178 @@
+//main.sass
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap')
+
+$soft-blue: hsl(215, 51%, 70%)
+$cyan: hsl(178, 100%, 50%)
+$v-dark-blue-main: hsl(217, 54%, 11%)
+$v-dark-blue-card: hsl(216, 50%, 16%)
+$v-dark-blue-line: hsl(215, 32%, 27%)
+$white: hsl(0, 0%, 100%)
+
+
+*, *:after, *:before
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+body
+  font-size: 18px
+  font-family: 'Outfit', sans-serif
+  background-color: $v-dark-blue-main
+  width: 100%
+  height: 100vh
+
+section
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 100%
+
+.card
+  width: 350px
+  background-color: $v-dark-blue-card
+  border-radius: 15px
+  padding: 24px 23px 33px
+  z-index: 1
+  position: relative
+  -webkit-box-shadow: 0 10px 5px 40px darken($v-dark-blue-card, 6%)
+  -moz-box-shadow: 0 10px 5px 40px darken($v-dark-blue-card, 6%)
+  box-shadow: 0 10px 5px 40px darken($v-dark-blue-card, 6%)
+
+
+.nft-image
+  margin-bottom: 24px
+  position: relative
+  z-index: 2
+
+  img
+    width: 100%
+    height: auto
+    border-radius: 10px
+
+  a
+    &:after
+      content: ''
+      position: absolute
+      width: 100%
+      height: 98%
+      top: 0
+      left: 0
+      z-index: 2
+      border-radius: 10px
+      background-color: $cyan
+      transition: opacity .4s ease
+      opacity: 0
+
+    &:before
+      content: url("../img/icon-view.svg")
+      position: absolute
+      z-index: 3
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      transition: opacity .4s ease
+      opacity: 0
+
+    &:hover
+      &:after
+        opacity: .2
+
+      &:before
+        opacity: 1
+
+.nft-info
+  position: relative
+  z-index: 2
+
+  & > a
+    font-weight: 700
+    font-size: 22px
+    line-height: 28px
+    color: $white
+    margin-bottom: 8px
+    text-decoration: none
+    transition: color .2s ease
+
+    &:hover
+      color: $cyan
+
+  & > p
+    font-size: 18px
+    line-height: 25px
+    letter-spacing: -0.005em
+    color: $soft-blue
+    margin-top: 17px
+
+  .cost-time
+    display: flex
+    justify-content: space-between
+    margin-top: 30px
+    margin-bottom: 26px
+
+    & > p:first-child
+      font-size: 17px
+      color: $cyan
+      padding-left: 16px
+      position: relative
+
+      &:after
+        content: url("../img/icon-ethereum.svg")
+        position: absolute
+        top: 2px
+        left: 0
+
+    & > p:last-child
+      font-size: 17px
+      color: $soft-blue
+      padding-left: 24px
+      position: relative
+
+      &:after
+        content: url("../img/icon-clock.svg")
+        position: absolute
+        top: 2px
+        left: 0
+
+  hr
+    border: 1px solid $v-dark-blue-line
+
+  .nft-author
+    margin-top: 17px
+    display: flex
+    align-items: center
+
+    img
+      width: 30px
+      height: 30px
+      border: 1px solid $white
+      border-radius: 50%
+
+    p
+      font-weight: 300
+      font-size: 17px
+      margin-left: 16px
+      letter-spacing: -0.015em
+      color: $soft-blue
+
+      a
+        color: $white
+        text-decoration: none
+        transition: color .2s ease
+
+        &:hover
+          color: $cyan
+
+@media screen and (max-width: 444px)
+  .card
+    width: 300px
+    padding: 15px 17px 27px
+  .nft-info
+    & > a
+      font-size: 20px
+
+    & > p
+      font-size: 15px
+      margin-top: 13px
+  .cost-time
+    margin-top: 20px !important
+    margin-bottom: 19px !important
